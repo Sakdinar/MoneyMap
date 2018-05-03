@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Transaction } from '../../database';
 
 /**
  * Generated class for the TransactionsPage page.
@@ -21,7 +22,10 @@ export class TransactionsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TransactionsPage');
+    // console.log('ionViewDidLoad TransactionsPage');
+    let transaction = new Transaction(20,"Primera transaccion");
+
+    transaction.save();
   }
 
 }
