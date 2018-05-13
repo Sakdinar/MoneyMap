@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Transaction } from '../../database';
+import { AddingPage } from '../adding/adding';
 
 /**
  * Generated class for the TransactionsPage page.
@@ -18,6 +19,7 @@ export class TransactionsPage {
 
   title : string = "Movimientos";
   transactions : any;
+  addingPage = AddingPage; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
