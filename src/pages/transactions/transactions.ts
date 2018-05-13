@@ -24,7 +24,9 @@ export class TransactionsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  
+  ionViewWillEnter(){ // aqui actualiza pantalla 
+  // ionViewDidLoad() {  // aqui muestra la pantalla por pirmera vez
     // console.log('ionViewDidLoad TransactionsPage');
     // let transaction = new Transaction(20,"Primera transaccion");
     // transaction.save();

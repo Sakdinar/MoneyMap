@@ -27,6 +27,10 @@ export class AddingPage {
   }
 
   save(){
-  	this.modelo.save();
+  	this.modelo.save().then(result =>{
+  		this.modelo = new Transaction(null,"");
+
+  		this.navCtrl.pop(); // regreso a la pagina principal
+  	});
   }
 }
