@@ -47,6 +47,12 @@ export class Transaction implements ITransaction{
 
 	save(){
 		return db.transactions.add(this);
+	}
+
+	static all(){
+		// transaction.all() => todas las trasacciones
+		// retorna un promise
+		return db.transactions.orderBy("id").reverse().toArray();
 	}	
 }
 

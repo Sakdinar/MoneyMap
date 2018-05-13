@@ -17,15 +17,25 @@ import { Transaction } from '../../database';
 export class TransactionsPage {
 
   title : string = "Movimientos";
+  transactions : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     // console.log('ionViewDidLoad TransactionsPage');
-    let transaction = new Transaction(20,"Primera transaccion");
+    // let transaction = new Transaction(20,"Primera transaccion");
+    // transaction.save();
 
-    transaction.save();
+    this.loadTransactions();
+  }
+
+  loadTransactions(){
+  	Transaction.all()
+  			.then((resultados)=>{
+  				this.transactions = resultados
+  				console.log(this.transactions);
+  			});
   }
 
 }
